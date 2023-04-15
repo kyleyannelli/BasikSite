@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ArtistInformation extends Model
 {
     use HasFactory;
+
+    public function ArtistInformation() {
+
+    }
 }

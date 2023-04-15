@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/songs', [\App\Http\Controllers\SongInformationController::class, 'index'])->name("songs");
+
+Route::get('/songs/{id}', [\App\Http\Controllers\SongInformationController::class, 'specificSong'])->name("songs");
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
