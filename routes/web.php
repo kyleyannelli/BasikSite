@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/songs', [\App\Http\Controllers\SongInformationController::class, 'index'])->name("songs");
 
 Route::get('/songs/{id}', [\App\Http\Controllers\SongInformationController::class, 'specificSong'])->name("songs");
