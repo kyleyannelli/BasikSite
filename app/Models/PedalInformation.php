@@ -11,12 +11,12 @@ class PedalInformation extends Model
 {
     use HasFactory;
 
-    public function getArtists(): HasManyThrough {
-        return $this->hasManyThrough(ArtistInformation::class, "artists_pedals");
+    public function artists(): HasManyThrough {
+        return $this->hasManyThrough(ArtistInformation::class, ArtistsPedals::class, "pedal_id", "id", "pedal_id");
     }
 
-    public function getPedal(): HasOne {
-        return $this->hasOne(Pedals::class);
+    public function pedal(): HasOne {
+        return $this->hasOne(Pedals::class, "id", "pedal_id");
     }
 
     public function getColor(): string {

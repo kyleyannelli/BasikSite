@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/songs', [\App\Http\Controllers\SongInformationController::class, 'index'])->name("songs");
+Route::get('/songs/{id}', [\App\Http\Controllers\SongInformationController::class, 'specificSong'])->name("specific-song");
 
-Route::get('/songs/{id}', [\App\Http\Controllers\SongInformationController::class, 'specificSong'])->name("songs");
+Route::get('/pedals', [\App\Http\Controllers\PedalInformationController::class, 'index'])->name("pedals");
+Route::get('/pedals/{id}', [\App\Http\Controllers\PedalInformationController::class, 'specificPedal'])->name("specific-pedal");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
