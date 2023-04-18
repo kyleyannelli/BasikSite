@@ -20,6 +20,8 @@ Route::get('/songs/{id}', [\App\Http\Controllers\SongInformationController::clas
 Route::get('/pedals', [\App\Http\Controllers\PedalInformationController::class, 'index'])->name("pedals");
 Route::get('/pedals/{id}', [\App\Http\Controllers\PedalInformationController::class, 'specificPedal'])->name("specific-pedal");
 
+Route::get('/pedals-songs/{id}', [\App\Http\Controllers\PedalsSongsController::class, 'specificPedal'])->name("specific-pedal-song");
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
